@@ -6,6 +6,7 @@ FROM services_weekly
 GROUP BY service
 HAVING SUM(patients_refused) > 100 AND AVG(patient_satisfaction) < 80;
 
+
 --Practice Questions:
 --1. Find services that have admitted more than 500 patients in total.
 SELECT service, SUM(patients_admitted) AS total_count
