@@ -7,7 +7,7 @@ SELECT
 		WHEN event IS NOT NULL AND event<>'none' THEN 'With Event'
 		ELSE 'No Event'
 	END AS event_status,
-	COUNT(*),	
+	COUNT(*) weeks,	
 	ROUND(AVG(patient_satisfaction),2) AS avg_satisfaction_rate,
 	ROUND(AVG(staff_morale),2) AS avg_morale
 FROM services_weekly
