@@ -1,0 +1,18 @@
+Name,Email Address,Answer Query
+Priyanka Patil,patil.priyu26@gmail.com,Completed
+Priyanka Patil,patil.priyu26@gmail.com,select  distinct category as pizza_category from pizza_types;
+Priyanka Patil,patil.priyu26@gmail.com,"select pizza_type_id,name,COALESCE(ingredients,'Missing Data')ingredients from pizza_types limit 5;"
+Priyanka Patil,patil.priyu26@gmail.com,select * from pizzas where price is null;
+Priyanka Patil,patil.priyu26@gmail.com,select * from orders where date='2015-01-01';
+Priyanka Patil,patil.priyu26@gmail.com,select * from pizzas order by price desc;
+Priyanka Patil,patil.priyu26@gmail.com,"select * from pizzas where size in('L','XL');"
+Priyanka Patil,patil.priyu26@gmail.com,select * from pizzas where price between 15.00 and 17.00 order by price;
+Priyanka Patil,patil.priyu26@gmail.com,select * from  pizza_types where upper(name) like '%CHICKEN%';
+Priyanka Patil,patil.priyu26@gmail.com,select * from orders where (date='2015-02-15' or time>'20:00:00');
+Priyanka Patil,patil.priyu26@gmail.com,select sum(quantity)total_pizzas_sold from order_details;
+Priyanka Patil,patil.priyu26@gmail.com,"select round(avg(price),2)avg_price_pizza from pizzas;"
+Priyanka Patil,patil.priyu26@gmail.com,"select order_id,sum(p.price)order_value from order_details o left join pizzas p on o.pizza_id=p.pizza_id group by order_id order by sum(p.price) desc,order_id;"
+Priyanka Patil,patil.priyu26@gmail.com,"select pt.category as Pizza_category,sum(quantity)total_orders from order_details o left join pizzas p on o.pizza_id=p.pizza_id left join pizza_types pt on p.pizza_type_id=pt.pizza_type_id group by pt.category;"
+Priyanka Patil,patil.priyu26@gmail.com,"select pt.category as Pizza_category,sum(quantity)total_orders from order_details o left join pizzas p on o.pizza_id=p.pizza_id left join pizza_types pt on p.pizza_type_id=pt.pizza_type_id group by pt.category having sum(quantity)>5000;"
+Priyanka Patil,patil.priyu26@gmail.com,"select pt.name as Pizza_name,pt.category as Pizza_category from pizzas p left join pizza_types pt on p.pizza_type_id=pt.pizza_type_id where not exists(select 1 from order_details o where o.pizza_id=p.pizza_id );"
+Priyanka Patil,patil.priyu26@gmail.com,"select pt.name as pizza_name,pt.category ,p1.size size_1,p2.size size_2, round((p1.price-p2.price),2)price_difference from pizzas p1 left join pizzas p2 on p1.pizza_type_id=p2.pizza_type_id left join pizza_types pt on p1.pizza_type_id=pt.pizza_type_id where p1.size<>p2.size order by pt.name; "
