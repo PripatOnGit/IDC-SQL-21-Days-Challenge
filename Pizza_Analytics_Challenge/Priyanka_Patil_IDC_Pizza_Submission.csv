@@ -1,4 +1,4 @@
-Name,Email Address,Answer Query
+Name,Email Address,AnswerQuery
 Priyanka Patil,patil.priyu26@gmail.com,Completed
 Priyanka Patil,patil.priyu26@gmail.com,select  distinct category as pizza_category from pizza_types;
 Priyanka Patil,patil.priyu26@gmail.com,"select pizza_type_id,name,COALESCE(ingredients,'Missing Data')ingredients from pizza_types limit 5;"
